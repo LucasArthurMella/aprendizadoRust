@@ -40,44 +40,48 @@ fn getFibbonaci(n: i32) -> i32{
 }
 
 fn getLyric(){
-    let first = ("first", "A partridge in a pear tree ");
+    let first = ("first", "A partridge in a pear tree. \n");
     let true_love = "my true love gave to me ";
     // let mut text = "On the " + first.0  + " day of Christmas, " + {true_love} + " ",{first.1};
 
     let mut text = String::new();
     text.push_str("On the ");
     text.push_str(first.0);
-    text.push_str(" day of Christmas, ");
+    text.push_str(" day of Christmas, \n");
     text.push_str(true_love);
+    text.push_str("\n");
     text.push_str(first.1);
+    text.push_str("\n");
+    text.push_str("    \n");
 
     let lyrics_tuple_array = [
-        ("second", "Two turtle doves,"),
-        ("third", "Three French Hens,"),
-        ("fourth", "Four calling birds,"),
-        ("fifth", "Five golden rings,"),
-        ("sixth", "Six geese a-laying,"),
-        ("seventh", "Seven swans a-swimming,"),
-        ("eighth", "Eight maids a-milking,"),
-        ("ninth", "Nine ladies dancing,"),
-        ("tenth", "Ten lords a-leaping,"),
-        ("eleventh", "Eleven pipers piping,"),
-        ("twelfth", "Twelve drummers drumming,")
+        ("second", "Two turtle doves, \n"),
+        ("third", "Three French Hens, \n"),
+        ("fourth", "Four calling birds, \n"),
+        ("fifth", "Five golden rings, \n"),
+        ("sixth", "Six geese a-laying, \n"),
+        ("seventh", "Seven swans a-swimming, \n"),
+        ("eighth", "Eight maids a-milking, \n"),
+        ("ninth", "Nine ladies dancing, \n"),
+        ("tenth", "Ten lords a-leaping, \n"),
+        ("eleventh", "Eleven pipers piping, \n"),
+        ("twelfth", "Twelve drummers drumming, \n")
     ];
 
     for (index, value) in lyrics_tuple_array.iter().enumerate() {
         text.push_str("On the ");
         text.push_str(value.0);
-        text.push_str(" day of Christmas, ");
+        text.push_str(" day of Christmas, \n");
         text.push_str(true_love);
-
+        text.push_str("\n");
 
         for cur_index in (0..index+1).rev(){
             text.push_str(lyrics_tuple_array[cur_index].1);
         }
 
-        text.push_str("And a partridge in a pear tree ");
-        println!("Index: {}, Value: {}", index, value.1);
+        text.push_str("And a partridge in a pear tree. \n");
+        text.push_str("    \n");
+
     }
 
     println!("{text}");
